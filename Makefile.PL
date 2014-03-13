@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-
+use 5.012001;
 
 use ExtUtils::MakeMaker 6.30;
 
@@ -25,13 +25,13 @@ my %WriteMakefileArgs = (
     "Digest::MD5" => 0,
     "URI" => 0,
     "feature" => 0,
-    "strict" => 0,
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
-    "Test::More" => 0
+    "Test::More" => 0,
+    "strict" => 0
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }

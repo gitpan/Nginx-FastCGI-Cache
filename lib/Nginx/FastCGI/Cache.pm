@@ -1,4 +1,4 @@
-use strict;
+use 5.12.1;
 use warnings;
 
 package Nginx::FastCGI::Cache;
@@ -115,7 +115,7 @@ sub _purge_cache {
     my ( $self, $dir ) = @_;
     croak "missing directory argument" unless $dir;
 
-    $dir .= '/' unless ( '/' eq substr $dir, -1 );
+    $dir .= '/' unless '/' eq substr $dir, -1;
 
     opendir( my $DH, $dir ) or croak "Failed to open $dir $!";
 
@@ -160,7 +160,7 @@ Nginx::FastCGI::Cache - Conveniently manage the nginx fastcgi cache
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
