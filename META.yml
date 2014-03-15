@@ -3,6 +3,7 @@ abstract: 'Conveniently manage the nginx fastcgi cache'
 author:
   - 'David Farrell <sillymoos@cpan.org>'
 build_requires:
+  File::Temp: 0
   Test::More: 0
   strict: 0
 configure_requires:
@@ -21,4 +22,4 @@ requires:
   feature: 0
   perl: v5.12.1
   warnings: 0
-version: 0.004
+version: 0.005

@@ -2,7 +2,7 @@ use 5.12.1;
 use warnings;
 
 package Nginx::FastCGI::Cache;
-$Nginx::FastCGI::Cache::VERSION = '0.004';
+$Nginx::FastCGI::Cache::VERSION = '0.005';
 use Digest::MD5 'md5_hex';
 use URI;
 use feature qw/switch say/;
@@ -15,37 +15,44 @@ sub new {
     my $self = {};
 
     # directory must exist
-    if ( exists $args->{location}
-        and -e $args->{location} )
-    {
-        $self->{location} = $$args{location};
-    }
-    else {
-        $self->{location} = '/var/nginx/cache';
-    }
+    croak "location argument is mandatory $!" unless exists $args->{location};
+    croak "unable to read location directory $args->{location} $!"
+      unless -e $args->{location} && -x $args->{location};
+    $self->{location} = $args->{location};
 
     # Must be 1-3 levels and have a value of 1 or 2
-    if (    exists $args->{levels}
-        and ref $args->{levels} eq 'ARRAY'
-        and @{ $args->{levels} } > 0
-        and @{ $args->{levels} } < 4
-        and grep { $_ > 0 and $_ < 3 } @{ $args->{levels} } )
-    {
-        $self->{levels} = $args->{levels};
+    if ( exists $args->{levels} ) {
+
+        if (    ref $args->{levels} eq 'ARRAY'
+            and @{ $args->{levels} } > 0
+            and @{ $args->{levels} } < 4
+            and @{ $args->{levels} } == grep { $_ > 0 and $_ < 3 }
+            @{ $args->{levels} } )
+        {
+            $self->{levels} = $args->{levels};
+        }
+        else {
+            croak "Invalid levels argument received $!";
+        }
     }
     else {
         $self->{levels} = [ 1, 2 ];
     }
 
-    # check only valid fascgi cache key variables used
-    if (    exists $args->{fastcgi_cache_key}
-        and ref $args->{fastcgi_cache_key} eq 'ARRAY'
-        and @{ $args->{fastcgi_cache_key} } > 0
-        and @{ $args->{fastcgi_cache_key} } ==
-        grep /scheme|request_method|host|request_uri/,
-        @{ $args->{fastcgi_cache_key} } )
-    {
-        $self->{fastcgi_cache_key} = $args->{fastcgi_cache_key};
+    # check only valid fastcgi cache key variables used
+    if ( exists $args->{fastcgi_cache_key} ) {
+
+        if (    ref $args->{fastcgi_cache_key} eq 'ARRAY'
+            and @{ $args->{fastcgi_cache_key} } > 0
+            and @{ $args->{fastcgi_cache_key} } ==
+            grep /scheme|request_method|host|request_uri/,
+            @{ $args->{fastcgi_cache_key} } )
+        {
+            $self->{fastcgi_cache_key} = $args->{fastcgi_cache_key};
+        }
+        else {
+            croak "invalid fastcgi_cache_key received $!";
+        }
     }
     else {
         $self->{fastcgi_cache_key} =
@@ -161,13 +168,13 @@ Nginx::FastCGI::Cache - Conveniently manage the nginx fastcgi cache
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
     use Nginx::FastCGI::Cache;
 
-    # args are optional, these are the default values
+    # location is mandatory, rest are optional, these are the default values
     my $nginx_cache
         = Nginx::FastCGI::Cache->new({
             fastcgi_cache_key => [qw/scheme request_method host request_uri/],
@@ -181,6 +188,17 @@ version 0.004
     # delete the cached file for this url only
     $nginx->purge_file('http://perltricks.com/');
 
+=head1 METHODS
+
+=head2 new
+
+Returns a new Nginx::FastCGI::Cache object. Location is the only mandatory
+argument, and the directory must exist and be executable (aka readable) by the
+Perl process in order to be valid. The other two arguments accepted are levels
+and fastcgi_cache_key. These default to the standard nginx settings (see the
+L<nginx fastcgi
+documentation|nginx.org/en/docs/http/ngx_http_fastcgi_module.html>).
+
 =head2 purge_file
 
 Deletes the nginx cached file for a particular URL - requires a URL as an
@@ -189,6 +207,31 @@ argument.
 =head2 purge_cache
 
 Deletes all nginx cached files in the nginx cache directory.
+
+=head1 BUGS / LIMITATIONS
+
+=over 4
+
+=item *
+
+The fastcgi_cache_key only acccepts: scheme, request_method, host, and
+request_uri as keys. This shouldn't be an issue as it's the recommended
+convention, but let me know if further variables would be useful.
+
+=item *
+
+When request_method is included in the fastcgi_cache_key (and you should, to
+avoid caching HEAD requests and returning them for GET requests with the same
+URL) only GET is supported. If there is demand for it, I can include other
+methods as well.
+
+=item *
+
+I tested this module on Linux Fedora 17 and 19 and with nginx v1.0.15 and
+v1.4.6. In testing with nginx v1.4.6, the caching function of nginx was
+unreliable and would somtimes not resume caching following a cache purge.
+
+=back
 
 =head1 AUTHOR
 

@@ -38,12 +38,13 @@
       },
       "test" : {
          "requires" : {
+            "File::Temp" : "0",
             "Test::More" : "0",
             "strict" : "0"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.004"
+   "version" : "0.005"
 }
 
