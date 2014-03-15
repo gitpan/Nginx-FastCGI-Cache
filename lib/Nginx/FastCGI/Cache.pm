@@ -2,7 +2,7 @@ use 5.12.1;
 use warnings;
 
 package Nginx::FastCGI::Cache;
-$Nginx::FastCGI::Cache::VERSION = '0.005';
+$Nginx::FastCGI::Cache::VERSION = '0.006';
 use Digest::MD5 'md5_hex';
 use URI;
 use feature qw/switch say/;
@@ -168,7 +168,7 @@ Nginx::FastCGI::Cache - Conveniently manage the nginx fastcgi cache
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
@@ -224,12 +224,6 @@ When request_method is included in the fastcgi_cache_key (and you should, to
 avoid caching HEAD requests and returning them for GET requests with the same
 URL) only GET is supported. If there is demand for it, I can include other
 methods as well.
-
-=item *
-
-I tested this module on Linux Fedora 17 and 19 and with nginx v1.0.15 and
-v1.4.6. In testing with nginx v1.4.6, the caching function of nginx was
-unreliable and would somtimes not resume caching following a cache purge.
 
 =back
 
