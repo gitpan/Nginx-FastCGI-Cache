@@ -2,7 +2,7 @@ use 5.12.1;
 use warnings;
 
 package Nginx::FastCGI::Cache;
-$Nginx::FastCGI::Cache::VERSION = '0.007';
+$Nginx::FastCGI::Cache::VERSION = '0.008';
 use Digest::MD5 'md5_hex';
 use URI;
 use feature qw/switch say/;
@@ -64,7 +64,7 @@ sub new {
 
 # builds plaintext key using the fastcgi_cache_key elements
 sub _build_fastcgi_key {
-    my ( $self, $url ) = @_;
+    my ( $self, $url, $method ) = @_;
     croak "missing url argument $!" unless $url;
 
     my $uri = URI->new($url);
@@ -76,7 +76,7 @@ sub _build_fastcgi_key {
                 $fastcgi_key .= $uri->scheme;
             }
             when ('request_method') {
-                $fastcgi_key .= 'GET';
+                $fastcgi_key .= $method || 'GET';
             }
             when ('host') {
                 $fastcgi_key .= $uri->host;
@@ -90,11 +90,11 @@ sub _build_fastcgi_key {
 }
 
 sub purge_file {
-    my ( $self, $url ) = @_;
+    my ( $self, $url, $method ) = @_;
     croak "missing url argument $!" unless $url;
 
-    my $md5_key = md5_hex( $self->_build_fastcgi_key($url) );
-    my $path    = $self->_build_path($md5_key);
+    my $md5_key = md5_hex( $self->_build_fastcgi_key( $url, $method ) );
+    my $path = $self->_build_path($md5_key);
     return $self->_purge_file($path);
 }
 
@@ -168,7 +168,7 @@ Nginx::FastCGI::Cache - Conveniently manage the nginx fastcgi cache
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SYNOPSIS
 
@@ -197,12 +197,16 @@ argument, and the directory must exist and be executable (aka readable) by the
 Perl process in order to be valid. The other two arguments accepted are levels
 and fastcgi_cache_key. These default to the standard nginx settings (see the
 L<nginx fastcgi
-documentation|nginx.org/en/docs/http/ngx_http_fastcgi_module.html>).
+documentation|http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html>).
 
 =head2 purge_file
 
 Deletes the nginx cached file for a particular URL - requires a URL as an
-argument.
+argument, and optionally, the HTTP request method:
+
+    $nginx_cache->purge_file('http://perltricks.com/'); #assumes GET
+    $nginx_cache->purge_file('http://perltricks.com/', 'POST');
+    $nginx_cache->purge_file('http://perltricks.com/', 'HEAD');
 
 =head2 purge_cache
 
@@ -217,13 +221,6 @@ Deletes all nginx cached files in the nginx cache directory.
 The fastcgi_cache_key only acccepts: scheme, request_method, host, and
 request_uri as keys. This shouldn't be an issue as it's the recommended
 convention, but let me know if further variables would be useful.
-
-=item *
-
-When request_method is included in the fastcgi_cache_key (and you should, to
-avoid caching HEAD requests and returning them for GET requests with the same
-URL) only GET is supported. If there is demand for it, I can include other
-methods as well.
 
 =back
 
