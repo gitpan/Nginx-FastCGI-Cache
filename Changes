@@ -1,4 +1,7 @@
 Revision history for Nginx-FastCGI-Cache
 
+0.007   2014/03/15
+        -Changed to croak on any failing file or directory test.
+
 0.006   2014/03/14
         -First useful version.

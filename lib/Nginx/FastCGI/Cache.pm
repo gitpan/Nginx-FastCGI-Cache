@@ -2,7 +2,7 @@ use 5.12.1;
 use warnings;
 
 package Nginx::FastCGI::Cache;
-$Nginx::FastCGI::Cache::VERSION = '0.006';
+$Nginx::FastCGI::Cache::VERSION = '0.007';
 use Digest::MD5 'md5_hex';
 use URI;
 use feature qw/switch say/;
@@ -104,10 +104,10 @@ sub _purge_file {
 
     if ( -e $path_to_purge and -w $path_to_purge ) {
         unlink $path_to_purge
-          or carp "unable to purge cache at $path_to_purge $!";
+          or croak "unable to purge cache at $path_to_purge $!";
         return 1;
     }
-    carp "cache does not exist or is not writable at $path_to_purge";
+    croak "cache does not exist or is not writable at $path_to_purge";
     return 0;
 }
 
@@ -168,7 +168,7 @@ Nginx::FastCGI::Cache - Conveniently manage the nginx fastcgi cache
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 SYNOPSIS
 
