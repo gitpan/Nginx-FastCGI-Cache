@@ -2,7 +2,7 @@ use 5.12.1;
 use warnings;
 
 package Nginx::FastCGI::Cache;
-$Nginx::FastCGI::Cache::VERSION = '0.009';
+$Nginx::FastCGI::Cache::VERSION = '0.010';
 use Digest::MD5 'md5_hex';
 use URI;
 use feature qw/switch say/;
@@ -168,7 +168,7 @@ Nginx::FastCGI::Cache - Conveniently manage the nginx fastcgi cache
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSIS
 

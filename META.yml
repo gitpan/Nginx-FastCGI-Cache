@@ -22,4 +22,7 @@ requires:
   feature: '0'
   perl: v5.12.1
   warnings: '0'
-version: '0.009'
+resources:
+  homepage: https://github.com/sillymoose/nginx-fastcgi-cache
+  repository: https://github.com/sillymoose/nginx-fastcgi-cache.git
+version: '0.010'

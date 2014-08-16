@@ -45,6 +45,14 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.009"
+   "resources" : {
+      "homepage" : "https://github.com/sillymoose/nginx-fastcgi-cache",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/sillymoose/nginx-fastcgi-cache.git",
+         "web" : "https://github.com/sillymoose/nginx-fastcgi-cache"
+      }
+   },
+   "version" : "0.010"
 }
 
