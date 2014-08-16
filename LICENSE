@@ -1,4 +1,179 @@
-This software is copyright (c) 2014 by David Farrell.
+
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>LICENSE - metacpan.org</title>
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="http://metacpan.org/feed/distribution/Nginx-FastCGI-Cache" />
+        
+        <link href="/_asset/1a11654c43c01ecf16de554e6358713a.css" rel="stylesheet" type="text/css">
+        <link rel="search" href="/static/opensearch.xml" type="application/opensearchdescription+xml" title="MetaCPAN">
+        <link rel="shortcut icon" href="/static/icons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/icons/apple-touch-icon.png">
+        <script src="/_asset/de11c7b5f6d622bb4e341664070e1ba7.js" type="text/javascript"></script>
+        
+        <link href="/_asset_less/534753698699ff47369de74ba1f21ff7.css" rel="stylesheet" type="text/css">
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-27829474-1']);
+            _gaq.push(['_setDomainName', 'metacpan.org']);
+            _gaq.push(['_setSiteSpeedSampleRate', 100]);
+            _gaq.push(['_trackPageview']);
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                <li class="visible-xs">
+                <a data-toggle="slidepanel" data-target=".slidepanel">
+                  <i class="fa fa-bars fa-2x icon-slidepanel"></i>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+                </li>
+            
+                    <li class="">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="">
+                        <a href="/recent">Recent</a>
+                    </li>
+                    <li class="hidden-xs">
+                        <a href="/about/faq">FAQ</a>
+                    </li>
+                    <li class="hidden-xs">
+                        <a href="https://github.com/CPAN-API/metacpan-web/issues">Feedback</a>
+                    </li>
+                    <li class="hidden-xs">
+                        <a href="/news">News</a>
+                    </li>
+                    <li class="hidden-xs">
+                        <a href="/lab">Lab</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Sign in
+                        <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="https://api.metacpan.org/oauth2/authorize?client_id=metacpan.org&amp;choice=facebook" onclick="return logInPAUSE(this)">
+                                <i class="fa fa-facebook fa-fw"></i>
+                                Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://api.metacpan.org/oauth2/authorize?client_id=metacpan.org&amp;choice=github" onclick="return logInPAUSE(this)">
+                                <i class="fa fa-github fa-fw"></i>
+                                GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://api.metacpan.org/oauth2/authorize?client_id=metacpan.org&amp;choice=twitter" onclick="return logInPAUSE(this)">
+                                <i class="fa fa-twitter fa-fw"></i>
+                                Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://api.metacpan.org/oauth2/authorize?client_id=metacpan.org&amp;choice=google" onclick="return logInPAUSE(this)">
+                                <i class="fa fa-google fa-fw"></i>
+                                Google
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+        </nav>
+
+        <div class="container-fluid">
+            
+            <div class="row hidden-phone">
+                <div class="head-small-logo col-md-3">
+                    <a href="/" class="small-logo"></a>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <form action="/search" class="form-inline search-form">
+                            <div class="input-append">
+                                <input type="text" name="q" size="41" id="search-input" class="form-control top-input-form" value="">
+                                <span class="input-group-btn">
+                                <button class="btn search-btn" type="submit">Search</button>
+                                </span>
+                                <small class="smaller">
+                                &nbsp;
+                                </small>
+                            </div>
+                            <!-- <br> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="main-content col-md-12">
+                    
+<strong><big>
+    <a href="/source/SILLYMOOS/Nginx-FastCGI-Cache-0.008">SILLYMOOS / Nginx-FastCGI-Cache-0.008</a>
+    
+    
+      / LICENSE
+    
+  </big></strong><br><br>
+
+<ul class="nav nav-list slidepanel">
+  <li class="visible-xs">
+    <div>
+    <form action="/search">
+        <input type="search" class="form-control tool-bar-form" placeholder="Search" name="q">
+        <input type="submit" class="hidden">
+    </form>
+</div>
+  </li>
+  <li class="nav-header">Tools</li>
+  <li>
+    <div>
+      <a href="/release/SILLYMOOS/Nginx-FastCGI-Cache-0.008/">Release Info</a>
+    </div>
+  </li>
+  
+  <li>
+    <div>
+      <a href="/author/SILLYMOOS/">Author</a>
+    </div>
+  </li>
+  <li>&nbsp;</li>
+  <li><div><a href="http://api.metacpan.org/source/SILLYMOOS/Nginx-FastCGI-Cache-0.008/LICENSE">Raw code</a></div></li>
+  <li>
+    <div>
+      <a href="/raw/SILLYMOOS/Nginx-FastCGI-Cache-0.008/LICENSE?download=1">Download</a>
+    </div>
+  </li>
+  
+  <li><div><a href="javascript:togglePod([])">Toggle pod</a></div></li>
+  
+  <li class="nav-header">Info</li>
+  <li>292 lines of code</li>
+  <li>0 lines of pod</li>
+  <li>17.92K bytes</li>
+</ul>
+
+<div class="content">
+
+<pre class="brush: plain; class-name: 'highlight'; toolbar: false;" id="source">This software is copyright (c) 2014 by David Farrell.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
@@ -8,7 +183,7 @@ Terms of the Perl programming language system itself
 a) the GNU General Public License as published by the Free
    Software Foundation; either version 1, or (at your option) any
    later version, or
-b) the "Artistic License"
+b) the &quot;Artistic License&quot;
 
 --- The GNU General Public License, Version 1, February 1989 ---
 
@@ -74,10 +249,10 @@ modification follow.
   0. This License Agreement applies to any program or other work which
 contains a notice placed by the copyright holder saying it may be
 distributed under the terms of this General Public License.  The
-"Program", below, refers to any such program or work, and a "work based
-on the Program" means either the Program or any work containing the
+&quot;Program&quot;, below, refers to any such program or work, and a &quot;work based
+on the Program&quot; means either the Program or any work containing the
 Program or a portion of it, either verbatim or with modifications.  Each
-licensee is addressed as "you".
+licensee is addressed as &quot;you&quot;.
 
   1. You may copy and distribute verbatim copies of the Program's source
 code as you receive it, in any medium, provided that you conspicuously and
@@ -171,8 +346,8 @@ be similar in spirit to the present version, but may differ in detail to
 address new problems or concerns.
 
 Each version is given a distinguishing version number.  If the Program
-specifies a version number of the license which applies to it and "any
-later version", you have the option of following the terms and conditions
+specifies a version number of the license which applies to it and &quot;any
+later version&quot;, you have the option of following the terms and conditions
 either of that version or of any later version published by the Free
 Software Foundation.  If the Program does not specify a version number of
 the license, you may choose any version ever published by the Free Software
@@ -191,7 +366,7 @@ of promoting the sharing and reuse of software generally.
   9. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
 FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
 OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
-PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
+PROVIDE THE PROGRAM &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
 TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
@@ -220,10 +395,10 @@ terms.
   To do so, attach the following notices to the program.  It is safest to
 attach them to the start of each source file to most effectively convey
 the exclusion of warranty; and each file should have at least the
-"copyright" line and a pointer to where the full notice is found.
+&quot;copyright&quot; line and a pointer to where the full notice is found.
 
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) 19yy  <name of author>
+    &lt;one line to give the program's name and a brief idea of what it does.&gt;
+    Copyright (C) 19yy  &lt;name of author&gt;
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -257,14 +432,14 @@ c'; they could even be mouse-clicks or menu items--whatever suits your
 program.
 
 You should also get your employer (if you work as a programmer) or your
-school, if any, to sign a "copyright disclaimer" for the program, if
+school, if any, to sign a &quot;copyright disclaimer&quot; for the program, if
 necessary.  Here a sample; alter the names:
 
   Yoyodyne, Inc., hereby disclaims all copyright interest in the
   program `Gnomovision' (a program to direct compilers to make passes
   at assemblers) written by James Hacker.
 
-  <signature of Ty Coon>, 1 April 1989
+  &lt;signature of Ty Coon&gt;, 1 April 1989
   Ty Coon, President of Vice
 
 That's all there is to it!
@@ -290,20 +465,20 @@ customary fashion, plus the right to make reasonable modifications.
 
 Definitions:
 
-  - "Package" refers to the collection of files distributed by the Copyright
+  - &quot;Package&quot; refers to the collection of files distributed by the Copyright
     Holder, and derivatives of that collection of files created through
     textual modification. 
-  - "Standard Version" refers to such a Package if it has not been modified,
+  - &quot;Standard Version&quot; refers to such a Package if it has not been modified,
     or has been modified in accordance with the wishes of the Copyright
     Holder. 
-  - "Copyright Holder" is whoever is named in the copyright or copyrights for
+  - &quot;Copyright Holder&quot; is whoever is named in the copyright or copyrights for
     the package. 
-  - "You" is you, if you're thinking about copying or distributing this Package.
-  - "Reasonable copying fee" is whatever you can justify on the basis of media
+  - &quot;You&quot; is you, if you're thinking about copying or distributing this Package.
+  - &quot;Reasonable copying fee&quot; is whatever you can justify on the basis of media
     cost, duplication charges, time of people involved, and so on. (You will
     not be required to justify it to the Copyright Holder, but only to the
     computing community at large as a market that must bear the fee.) 
-  - "Freely Available" means that no fee is charged for the item itself, though
+  - &quot;Freely Available&quot; means that no fee is charged for the item itself, though
     there may be fees involved in handling the item. It also means that
     recipients of the item may redistribute it under the same conditions they
     received it. 
@@ -371,9 +546,58 @@ be considered part of this Package.
 8. The name of the Copyright Holder may not be used to endorse or promote
 products derived from this software without specific prior written permission.
 
-9. THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+9. THIS PACKAGE IS PROVIDED &quot;AS IS&quot; AND WITHOUT ANY EXPRESS OR IMPLIED
 WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
 MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 The End
+
+</pre>
+
+</div>
+
+<script type="text/javascript">
+
+//document.getElementById('source').style.visibility = 'hidden';
+//SyntaxHighlighter.all();
+$(document).ready(function() {
+
+togglePod([]);
+
+if(document.location.hash)
+    document.location.href = document.location.href;
+});
+</script>
+
+                </div>
+            </div>
+
+            <div class="row footer">
+                <div class="hidden-xs hidden-sm col-md-2">&nbsp;</div>
+                <div class="col-xs-2 col-sm-1 col-md-1" style="text-align: center">
+                    <a href="https://github.com/CPAN-API/cpan-api/wiki/API-docs">API</a>
+                </div>
+                <div class="col-xs-5 col-sm-3 col-md-2" style="text-align: center">
+                    <a href="/about">About MetaCPAN</a>
+                </div>
+                <div class="hidden-xs col-sm-2 col-md-2" style="text-align: center">
+                    <a href="/mirrors">CPAN Mirrors</a>
+                </div>
+                <div class="hidden-xs col-sm-3 col-md-2" style="text-align: center">
+                    <a href="https://github.com/CPAN-API/metacpan-web">Fork metacpan.org</a>
+                </div>
+                <div class="hidden-xs col-sm-1 col-md-1" style="text-align: center">
+                    <a href="http://Perl.org/">Perl.org</a>
+                </div>
+                <div class="col-xs-5 col-sm-2 col-md-2" style="text-align: right; font-size: 0.7em; line-height: 1; color: #999">
+                    Hosting generously<br>sponsored by <a href="http://www.bytemark.co.uk/r/metacpan.org/">Bytemark</a>
+                    <br><br>
+                    <a href="http://www.bytemark.co.uk/r/metacpan.org/" target="_blank" class="thumbnail sponsor-logo">
+                        <img src="/static/images/sponsors/bytemark_logo.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
 

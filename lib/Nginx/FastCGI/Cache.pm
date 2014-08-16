@@ -2,7 +2,7 @@ use 5.12.1;
 use warnings;
 
 package Nginx::FastCGI::Cache;
-$Nginx::FastCGI::Cache::VERSION = '0.008';
+$Nginx::FastCGI::Cache::VERSION = '0.009';
 use Digest::MD5 'md5_hex';
 use URI;
 use feature qw/switch say/;
@@ -168,7 +168,7 @@ Nginx::FastCGI::Cache - Conveniently manage the nginx fastcgi cache
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 SYNOPSIS
 
@@ -223,6 +223,10 @@ request_uri as keys. This shouldn't be an issue as it's the recommended
 convention, but let me know if further variables would be useful.
 
 =back
+
+=head1 REPOSITORY
+
+L<https://github.com/sillymoose/nginx-fast-cgi>
 
 =head1 AUTHOR
 
